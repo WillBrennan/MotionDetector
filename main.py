@@ -54,7 +54,7 @@ if __name__ == '__main__':
     triggered = False
     while True:
         ret, frame = cam.read()
-        if frame:
+        if ret:
             frame_id += 1
             logger.debug('processing {0} frame'.format(frame_id))
             len_frame = len(frames)
@@ -65,7 +65,7 @@ if __name__ == '__main__':
                 data = numpy.hstack(([val], data[:min(args.n_samples, data.shape[0])]))
                 data_avg = numpy.mean(data)
                 data_std = numpy.std(data)
-                data_var = numpy.abs(val-data_avg)/data.std
+                data_var = numpy.abs(val-data_avg)/data_std
                 logger.debug('data_avg: {0}, data_std: {1}, data_var: {2}'.format(data_avg, data_std, data_var))
                 critical = (data_var > args.offset) and (frame_id > args.n_min)
                 if args.display:
