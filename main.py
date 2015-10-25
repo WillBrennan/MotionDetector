@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 data_avg = numpy.mean(data)
                 data_std = numpy.std(data)
                 data_var = numpy.abs(val-data_avg)/data_std
-                logger.debug('data_avg: {0}, data_std: {1}, data_var: {2}'.format(data_avg, data_std, data_var))
+                logger.debug('data_avg: {0}, data_std: {1}, data_var: {2}, value: {3}'.format(data_avg, data_std, data_var, val))
                 critical = (data_var > args.offset) and (frame_id > args.n_min)
                 if args.display:
                     msg0 = "avg: {0}, std: {0}, var: {1}".format(data_avg, data_std, data_var)
