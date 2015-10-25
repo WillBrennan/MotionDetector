@@ -4,7 +4,10 @@ MotionDetector detects when significant movement has occurs in a parsed video, a
 It operates using the frame difference across the current frame and previous two frames. The difference frame is given by the maximum of the difference between the current frame and either of the previous two.
 
 ```python
-def frame_diff(img_vold, img_old, new_img):    img_diff0 = cv2.absdiff(new_img, img_old)    img_diff1 = cv2.absdiff(img_old, img_vold)    return cv2.bitwise_or(img_diff0, img_diff1)
+def frame_diff(img_vold, img_old, new_img):
+    img_diff0 = cv2.absdiff(new_img, img_old)
+    img_diff1 = cv2.absdiff(img_old, img_vold)
+    return cv2.bitwise_or(img_diff0, img_diff1)
 ```
 The average value of the frame is taken, this is added to an array consisting of the last `n_sample`, by default 1000, if the current average exists `offset` times the standard deviation then an event is said to off occured. A frame will only be saved once initally triggered, the trigger will be set back to false when the critical conditions are no longer met.
 
@@ -17,3 +20,5 @@ cd MotionDetector
 
 python main.py -v <path to avi/mp4 video file> -u /media/psf/Will/datasets/MotionDetector -i -d -e
 ```
+## Demonstration
+![Demo on Level Crossing](https://raw.githubusercontent.com/WillBrennan/MotionDetector/master/demo.png "Demonstration")
