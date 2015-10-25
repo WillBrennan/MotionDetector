@@ -12,7 +12,7 @@ def frame_diff(img_vold, img_old, new_img):
 The average value of the frame is taken, this is added to an array consisting of the last `n_sample`, by default 1000, if the current average exists `offset` times the standard deviation then an event is said to off occured. A frame will only be saved once initally triggered, the trigger will be set back to false when the critical conditions are no longer met.
 
 ## Setup & Quick Start
-MotionDetector requires OpenCV and Numpy, it requires a path to the video file to process which must be an AVI or mp4 video, this is parsed via the `-v/--video_path` argument. To save the event images the `-u/--dump_path` argument should be parsed with a valid directory along with the `-i/--dump_images` command. To display the images the `-d/--display` argument should be parsed, and to set the logger to debug mode `-e`. To display help messages then the `-h` argument should be parsed.
+Getting the app to run is pretty easy.  MotionDetector requires OpenCV and Numpy, to [install OpenCV](http://docs.opencv.org/doc/tutorials/introduction/linux_install/linux_install.html). It also requires a path to the video file to process which must be an AVI or mp4 video, this is parsed via the `-v/--video_path` argument. To save the event images the `-u/--dump_path` argument should be parsed with a valid directory along with the `-i/--dump_images` command. To display the images the `-d/--display` argument should be parsed, and to set the logger to debug mode `-e`. To display help messages then the `-h` argument should be parsed.
 
 ```
 git clone https://github.com/WillBrennan/MotionDetector MotionDetector
