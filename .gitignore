@@ -60,3 +60,7 @@ target/
 
 # PyCharm
 .idea/
+
+#Video Files
+*.mp4
+*.avi
