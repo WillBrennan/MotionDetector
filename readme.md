@@ -1,5 +1,5 @@
-#MotionDetector
-MotionDetector detects when significant movement has occurs in a parsed video, an image is then saved along with the timestamp when a movement event has occured. The processing image showing what has moved in the frame is also saved. This code was was originally written to detect when a level crossing was down and a train went pass in a video that was several hours long without having to waste time watching the entire video. Don't ask, related to some friends university project.
+#Motion Detector
+Motion Detector detects when significant movement has occurs in a parsed video, an image is then saved along with the timestamp when a movement event has occured. The processing image showing what has moved in the frame is also saved. This code was was originally written to detect when a level crossing was down and a train went pass in a video that was several hours long without having to waste time watching the entire video. Don't ask, related to some friends university project.
 
 It operates using the frame difference across the current frame and previous two frames. The difference frame is given by the maximum of the difference between the current frame and either of the previous two.
 
