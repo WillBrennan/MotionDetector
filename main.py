@@ -48,7 +48,7 @@ if __name__ == '__main__':
     assert os.path.exists(args.video_path), '{0} is not a valid path'.format(args.video_path)
     logger.info('loading video from {0}'.format(args.video_path))
     cam = cv2.VideoCapture(args.video_path)
-    data = numpy.array([], dtype=numpy.float)
+    data = numpy.array([], dtype=float)
     frames = []
     frame_id = 0
     triggered = False
